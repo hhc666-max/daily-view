@@ -1,0 +1,17 @@
+{
+  "name": "每日视野站 · AI × 集成电路 × 赚钱认知",
+  "short_name": "视野站",
+  "description": "每天 12 条精选：AI 算力、芯片产业链、赚钱路径。只深读一条，其余扫过即可。",
+  "lang": "zh-CN",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f4f5f7",
+  "theme_color": "#5b5bd6",
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
