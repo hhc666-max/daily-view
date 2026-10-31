@@ -576,6 +576,24 @@ textarea:focus,input[type=text]:focus{
   header::after{display:none!important}
   h1{color:#000!important;-webkit-text-fill-color:#000!important}
 }
+/* v1.10 · 今日三判断 */
+.brief{margin:0 0 26px;border:1px solid var(--border);border-radius:16px;
+  background:linear-gradient(180deg,color-mix(in srgb,var(--ai) 5%,var(--card)),var(--card) 62%);
+  padding:18px 20px 6px;box-shadow:var(--shadow)}
+.brief-hd{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.brief-hd b{font-size:15px}
+.brief-hd span{font-size:11.5px;color:var(--text-3)}
+.brief-line{display:flex;gap:10px;padding:10px 0;border-top:1px dashed var(--line);font-size:14px;line-height:1.75}
+.brief-hd + .brief-line{border-top:0}
+.brief-tag{flex:0 0 auto;font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px;margin-top:4px;letter-spacing:.03em}
+.brief-tag.ai{background:color-mix(in srgb,var(--ai) 13%,transparent);color:var(--ai)}
+.brief-tag.ic{background:color-mix(in srgb,var(--ic) 13%,transparent);color:var(--ic)}
+.brief-tag.fin{background:color-mix(in srgb,var(--fin) 15%,transparent);color:var(--fin)}
+.brief-line a{color:var(--text-3);text-decoration:none;margin-left:4px}
+.brief-line a:hover{color:var(--ai)}
+@media (max-width:680px){.brief{padding:15px 15px 4px;border-radius:14px;margin-bottom:22px}
+  .brief-line{font-size:13.5px;line-height:1.7;gap:8px}}
+@media print{.brief{break-inside:avoid}}
 </style>
 </head>
 <!-- v1.1：data-issue 是这一期的日期。生成器必须每天改它，页面所有日期/星期都从这里推 -->
@@ -613,6 +631,14 @@ textarea:focus,input[type=text]:focus{
 
   <!-- v1.7：两周没导出周报时的提醒（默认隐藏，由 app.js 决定要不要出现） -->
   <div id="nudge" class="nudge" hidden></div>
+
+  <!-- v1.10：今日三判断（三条流各一句，30 秒读完） -->
+  <section class="brief" id="brief">
+    <div class="brief-hd"><b>今日三判断</b><span>30 秒读完 · 后面每一条都是这三句的论据</span></div>
+    <div class="brief-line"><span class="brief-tag ai">AI</span><span>算力需求没降温，变的是「谁出钱」：OpenAI 下调融资目标、微软改发债，先被砍的是存储、光模块、封测这些配套，不是 GPU 本身。<a href="#f-ai">↓</a></span></div>
+    <div class="brief-line"><span class="brief-tag ic">芯片</span><span>国产链的估值锚正从「跑分」换成「交付」：沐曦万卡集群 1–2 天跑通客户模型，卖的是把模型用起来的能力。<a href="#f-ic">↓</a></span></div>
+    <div class="brief-line"><span class="brief-tag fin">钱</span><span>同一个「AI 需求」，供给端读出涨价（HBM），需求端读出暴跌（英特尔 −28%）——本周复盘素材就在这里。<a href="#f-fin">↓</a></span></div>
+  </section>
 
   <!-- ========== ① 今日速览 ========== -->
   <section class="z1" id="z1">
@@ -661,7 +687,7 @@ textarea:focus,input[type=text]:focus{
     </div>
 
     <!-- AI 流 -->
-    <div class="flow f-ai">
+    <div class="flow f-ai" id="f-ai">
       <div class="flow-hd"><span class="dot-c"></span><span class="flow-title">AI 流</span><span class="flow-meta">4 条 · 按你的身份排优先级</span></div>
 
       <div class="item" data-id="ai1">
@@ -714,7 +740,7 @@ textarea:focus,input[type=text]:focus{
     </div>
 
     <!-- 芯片流 -->
-    <div class="flow f-ic">
+    <div class="flow f-ic" id="f-ic">
       <div class="flow-hd"><span class="dot-c"></span><span class="flow-title">芯片流</span><span class="flow-meta">4 条 · 按产业链七层归档</span></div>
 
       <div class="item" data-id="ic1">
@@ -767,7 +793,7 @@ textarea:focus,input[type=text]:focus{
     </div>
 
     <!-- 赚钱流：按星期轮换 -->
-    <div class="flow f-fin">
+    <div class="flow f-fin" id="f-fin">
       <div class="flow-hd"><span class="dot-c"></span><span class="flow-title">赚钱流</span><span class="flow-meta" id="money-sub">周末 · 自由补读 / 写长文 · 4 条</span></div>
 
       <div class="item" data-id="m1">
