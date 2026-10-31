@@ -12,6 +12,11 @@
 setup-github.bat -Token ghp_你的令牌 -User 你的用户名
 ```
 
+## 怎么确认已经上线
+
+双击 `check-live.bat`：它会读 `site` 里的仓库地址，检查首页状态码、线上是哪一期、图标和 manifest 在不在。
+看到「结论：线上就是最新这一期」就算成了。
+
 ## 以后每天：双击 `deploy.bat`
 
 打包 → 提交 → 推送，一条龙。GitHub Pages 一分钟内自动重建。
