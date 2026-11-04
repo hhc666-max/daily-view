@@ -1042,7 +1042,12 @@ textarea:focus,input[type=text]:focus{
       <div class="sec-line"></div>
     </div>
     <div class="box">
-      <div class="arch-list" id="arch-list"><div class="kb-empty">还没有往期。明天生成新一期后，这里会多一条。</div></div>
+      <div class="arch-list" id="arch-list">
+        <a class="arch-link" href="archive/2026-11-04.html" aria-current="page">2026-11-04 周三 · 本期</a>
+        <a class="arch-link" href="archive/2026-11-03.html">2026-11-03 周二</a>
+        <a class="arch-link" href="archive/2026-11-02.html">2026-11-02 周一</a>
+        <a class="arch-link" href="archive/2026-10-31.html">2026-10-31 周六</a>
+        <a class="arch-link" href="archive/2026-10-30.html">2026-10-30 周五</a></div>
       <div class="chk" style="margin-top:10px;font-size:12px;color:var(--text-3)">
         每天生成新一期时，上一期会存成 <code>archive/YYYY-MM-DD.html</code> 自动加进上面的列表。点开就是当天的完整页面，日期与星期按当期显示，不会串。
       </div>
@@ -1056,7 +1061,7 @@ textarea:focus,input[type=text]:focus{
 </div>
 
 <!-- v1.1：往期归档清单。tools/archive.mjs 会往数组里插日期 -->
-<script id="archive-data" type="application/json">["2026-11-03", "2026-11-02", "2026-10-31", "2026-10-30"]</script>
+<script id="archive-data" type="application/json">["2026-11-04","2026-11-03","2026-11-02","2026-10-31","2026-10-30"]</script>
 
 <!-- v1.2：知识库体量。tools/sync-kb.mjs 扫 kb/ 后写回，别手改 -->
 <script id="kb-data" type="application/json">{"terms":23,"termsNew":3,"companies":0,"updated":"2026-11-04"}</script>
