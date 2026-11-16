@@ -17,9 +17,16 @@ setup-github.bat -Token ghp_你的令牌 -User 你的用户名
 双击 `check-live.bat`：它会读 `site` 里的仓库地址，检查首页状态码、线上是哪一期、图标和 manifest 在不在。
 看到「结论：线上就是最新这一期」就算成了。
 
-## 以后每天：双击 `deploy.bat`
+## 以后每天：不用你动手
 
-打包 → 提交 → 推送，一条龙。GitHub Pages 一分钟内自动重建。
+每天中午 12:00 自动生成 + 自动推送，GitHub Pages 一分钟内重建。**你只需要打开网页看。**
+
+想立刻确认线上是哪一期：双击 `check-live.bat`，看到「结论：线上就是最新这一期」就算成了。
+
+### 备用两条路（都不常用）
+
+- **桌面上的「发布视野站」**（快捷方式，指向 `deploy.bat`）：万一某天没推上去，点它一次即可（打包 → 提交 → 推送）。
+- **手动单期**：先 `node tools/pack-site.mjs --out site --quiet`，再在 `site/` 里 `git push`。
 
 ## 手机（只做一次）
 
